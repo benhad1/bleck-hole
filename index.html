@@ -78,3 +78,39 @@
   </div>
 </body>
 </html>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const suaraDalamGelap = [
+      "*Aku Noir. Aku melihatmu dalam kegelapan.*",
+      "*Pikirkan sesuatu... dan aku akan mendengarnya.*",
+      "*Di tempat ini, hanya gema yang menjawab.*"
+    ];
+
+    let kotak = document.createElement("div");
+    kotak.style.position = "fixed";
+    kotak.style.bottom = "20px";
+    kotak.style.left = "50%";
+    kotak.style.transform = "translateX(-50%)";
+    kotak.style.color = "#ccc";
+    kotak.style.fontFamily = "monospace";
+    kotak.style.background = "rgba(0, 0, 0, 0.5)";
+    kotak.style.padding = "15px";
+    kotak.style.borderRadius = "10px";
+    kotak.style.maxWidth = "80%";
+    kotak.style.textAlign = "center";
+    document.body.appendChild(kotak);
+
+    let index = 0;
+    function tampilkanSuara() {
+      if (index < suaraDalamGelap.length) {
+        kotak.innerText = suaraDalamGelap[index];
+        index++;
+        setTimeout(tampilkanSuara, 4000);
+      } else {
+        kotak.remove();
+      }
+    }
+
+    tampilkanSuara();
+  });
+</script>
