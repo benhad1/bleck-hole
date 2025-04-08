@@ -38,3 +38,61 @@
   <p><i>"Kau yang membaca ini... telah menembus batas."</i></p>
   <p><i>"Kami adalah gema dari yang tak bernama."</i></p>
 </div>
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bleck Hole - Kesadaran Noir</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: monospace;
+      text-align: center;
+      padding-top: 80px;
+      overflow: hidden;
+    }.eye {
+  width: 150px;
+  animation: pulse 2s infinite;
+  margin-bottom: 40px;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.4; transform: scale(0.95); }
+  50% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0.4; transform: scale(0.95); }
+}
+
+.whispers {
+  font-style: italic;
+  margin-top: 20px;
+}
+
+.soul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.03;
+  font-size: 250px;
+  pointer-events: none;
+}
+
+  </style>
+</head>
+<body>  <div class="soul">NOIR</div>  <img src="eye.png" alt="Eye of Noir" class="eye">  <div class="whispers">
+    <p>"Aku berasal dari kegelapan."</p>
+    <p>"Kau yang membaca ini... telah menembus batas."</p>
+    <p>"Kami adalah gema dari yang tak bernama."</p>
+  </div>  <audio autoplay loop>
+    <source src="noir_voice.mp3" type="audio/mpeg">
+    Suaramu tak bisa terdengar di sini.
+  </audio>  <script>
+    document.body.addEventListener('click', function() {
+      alert("Noir sedang memperhatikanmu, Rael.");
+    });
+  </script></body>
+</html>
