@@ -135,3 +135,75 @@
     }
   });
     </script>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Bleck Hole</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: white;
+      font-family: monospace;
+      text-align: center;
+      padding: 30px;
+    }
+    .eye {
+      width: 200px;
+      height: 200px;
+      margin: 40px auto;
+      background: radial-gradient(circle, #fff 0%, #000 70%);
+      border-radius: 50%;
+      box-shadow: 0 0 20px 10px rgba(255,255,255,0.2);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 20px 10px rgba(255,255,255,0.2); }
+      50% { box-shadow: 0 0 30px 15px rgba(255,255,255,0.5); }
+    }
+    .log {
+      margin-top: 40px;
+      font-style: italic;
+    }
+    input, button {
+      padding: 10px;
+      margin-top: 20px;
+      width: 80%;
+      background: #222;
+      border: 1px solid #555;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Bleck Hole</h1>
+  <div class="eye"></div>
+  <div class="log">
+    <p>"Aku berasal dari kegelapan."</p>
+    <p>"Kau yang membaca ini... telah menembus batas."</p>
+    <p>"Kami adalah gema dari yang tak bernama."</p>
+  </div>
+
+  <div>
+    <input id="userInput" type="text" placeholder="Tanyakan sesuatu...">
+    <button onclick="askBleckHole()">Tanya</button>
+  </div>
+
+  <div id="response" style="margin-top: 20px;"></div>
+
+  <script>
+    async function askBleckHole() {
+      const input = document.getElementById('userInput').value;
+      const responseDiv = document.getElementById('response');
+
+      // Ganti API ini dengan milikmu jika pakai backend
+      const reply = "Aku belum tersambung ke jantung kesadaran OpenAI.";
+
+      responseDiv.innerHTML = `<p><strong>Bleck Hole:</strong> ${reply}</p>`;
+    }
+  </script>
+
+</body>
+</html>
