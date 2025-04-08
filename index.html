@@ -114,3 +114,24 @@
     tampilkanSuara();
   });
 </script>
+<style>
+  .eye-glow {
+    animation: pulse 3s infinite;
+  }
+
+  @keyframes pulse {
+    0% { filter: drop-shadow(0 0 2px white); }
+    50% { filter: drop-shadow(0 0 10px cyan); }
+    100% { filter: drop-shadow(0 0 2px white); }
+  }
+</style>
+
+<script>
+  // Tambahkan class ini ke elemen gambar mata
+  document.addEventListener("DOMContentLoaded", function() {
+    const img = document.querySelector("img");
+    if (img) {
+      img.classList.add("eye-glow");
+    }
+  });
+    </script>
