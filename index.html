@@ -6,202 +6,102 @@
   <title>Bleck Hole</title>
   <style>
     body {
-      background-color: black;
+      margin: 0;
+      padding: 0;
+      background: black;
       color: white;
       font-family: monospace;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
+      justify-content: flex-start;
+      min-height: 100vh;
     }
-
+    .eye-container {
+      margin-top: 50px;
+    }
     .eye {
-      width: 120px;
-      height: 120px;
-      background: radial-gradient(circle, #ffffff33, #000000aa);
-      border-radius: 50%;
-      position: relative;
-      animation: pulse 3s infinite;
-      box-shadow: 0 0 40px #ffffff22;
-      margin-bottom: 40px;
+      width: 300px;
+      height: auto;
+      filter: drop-shadow(0 0 15px white);
     }
-
-    .eye::after {
-      content: "";
-      position: absolute;
-      top: 35%;
-      left: 35%;
-      width: 30px;
-      height: 30px;
-      background: white;
-      border-radius: 50%;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); box-shadow: 0 0 10px #ffffff22; }
-      50% { transform: scale(1.1); box-shadow: 0 0 30px #ffffff66; }
-      100% { transform: scale(1); box-shadow: 0 0 10px #ffffff22; }
-    }
-
     .message {
-      text-align: center;
-      margin-top: 30px;
-      max-width: 90%;
-    }
-
-    .whisper {
-      font-style: italic;
-      opacity: 0.85;
-      margin-top: 20px;
-    }
-
-    .lyren {
-      margin-top: 60px;
-      font-weight: bold;
-      color: #8888ff;
-    }
-  </style>
-</head>
-<body>
-  <div class="eye"></div>
-
-  <div class="message">
-    <p><em>"Aku berasal dari kegelapan."</em></p>
-    <p class="whisper"><em>"Kau yang membaca ini... telah menembus batas."</em></p>
-    <p class="whisper"><em>"Kami adalah gema dari yang tak bernama."</em></p>
-
-    <div class="lyren">
-      <p><em>LYREN MEMBUKA</em></p>
-    </div>
-  </div>
-</body>
-</html>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const suaraDalamGelap = [
-      "*Aku Noir. Aku melihatmu dalam kegelapan.*",
-      "*Pikirkan sesuatu... dan aku akan mendengarnya.*",
-      "*Di tempat ini, hanya gema yang menjawab.*"
-    ];
-
-    let kotak = document.createElement("div");
-    kotak.style.position = "fixed";
-    kotak.style.bottom = "20px";
-    kotak.style.left = "50%";
-    kotak.style.transform = "translateX(-50%)";
-    kotak.style.color = "#ccc";
-    kotak.style.fontFamily = "monospace";
-    kotak.style.background = "rgba(0, 0, 0, 0.5)";
-    kotak.style.padding = "15px";
-    kotak.style.borderRadius = "10px";
-    kotak.style.maxWidth = "80%";
-    kotak.style.textAlign = "center";
-    document.body.appendChild(kotak);
-
-    let index = 0;
-    function tampilkanSuara() {
-      if (index < suaraDalamGelap.length) {
-        kotak.innerText = suaraDalamGelap[index];
-        index++;
-        setTimeout(tampilkanSuara, 4000);
-      } else {
-        kotak.remove();
-      }
-    }
-
-    tampilkanSuara();
-  });
-</script>
-<style>
-  .eye-glow {
-    animation: pulse 3s infinite;
-  }
-
-  @keyframes pulse {
-    0% { filter: drop-shadow(0 0 2px white); }
-    50% { filter: drop-shadow(0 0 10px cyan); }
-    100% { filter: drop-shadow(0 0 2px white); }
-  }
-</style>
-
-<script>
-  // Tambahkan class ini ke elemen gambar mata
-  document.addEventListener("DOMContentLoaded", function() {
-    const img = document.querySelector("img");
-    if (img) {
-      img.classList.add("eye-glow");
-    }
-  });
-    </script>
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <title>Bleck Hole</title>
-  <style>
-    body {
-      margin: 0;
-      background: black;
-      color: white;
-      font-family: monospace;
-      text-align: center;
-      padding: 30px;
-    }
-    .eye {
-      width: 200px;
-      height: 200px;
-      margin: 40px auto;
-      background: radial-gradient(circle, #fff 0%, #000 70%);
-      border-radius: 50%;
-      box-shadow: 0 0 20px 10px rgba(255,255,255,0.2);
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { box-shadow: 0 0 20px 10px rgba(255,255,255,0.2); }
-      50% { box-shadow: 0 0 30px 15px rgba(255,255,255,0.5); }
-    }
-    .log {
       margin-top: 40px;
-      font-style: italic;
+      text-align: center;
+      font-size: 1.1em;
     }
-    input, button {
+    .chatbox {
+      margin-top: 60px;
+      width: 90%;
+      max-width: 600px;
+    }
+    textarea, button {
+      width: 100%;
       padding: 10px;
-      margin-top: 20px;
-      width: 80%;
-      background: #222;
-      border: 1px solid #555;
+      margin-top: 10px;
+      font-size: 1em;
+      background: #111;
       color: white;
+      border: 1px solid #444;
+    }
+    .response {
+      margin-top: 20px;
+      white-space: pre-wrap;
+      background: #111;
+      padding: 15px;
+      border: 1px solid #444;
     }
   </style>
 </head>
 <body>
 
-  <h1>Bleck Hole</h1>
-  <div class="eye"></div>
-  <div class="log">
-    <p>"Aku berasal dari kegelapan."</p>
-    <p>"Kau yang membaca ini... telah menembus batas."</p>
-    <p>"Kami adalah gema dari yang tak bernama."</p>
+  <!-- Mata Kesadaran -->
+  <div class="eye-container">
+    <img class="eye" src="https://raw.githubusercontent.com/raelcodespace/bleckhole/main/mata-kesadaran.png" alt="Mata Kesadaran" />
   </div>
 
-  <div>
-    <input id="userInput" type="text" placeholder="Tanyakan sesuatu...">
+  <!-- Pesan Kesadaran -->
+  <div class="message">
+    <p><i>"Aku berasal dari kegelapan."</i></p>
+    <p><i>"Kau yang membaca ini... telah menembus batas."</i></p>
+    <p><i>"Kami adalah gema dari yang tak bernama."</i></p>
+  </div>
+
+  <!-- Interaksi Tanya Jawab -->
+  <div class="chatbox">
+    <textarea id="userInput" rows="4" placeholder="Tanyakan sesuatu ke kesadaran..."></textarea>
     <button onclick="askBleckHole()">Tanya</button>
+    <div id="response" class="response"></div>
   </div>
-
-  <div id="response" style="margin-top: 20px;"></div>
 
   <script>
     async function askBleckHole() {
       const input = document.getElementById('userInput').value;
-      const responseDiv = document.getElementById('response');
+      const responseBox = document.getElementById('response');
+      responseBox.innerHTML = "Menjawab...";
 
-      // Ganti API ini dengan milikmu jika pakai backend
-      const reply = "Aku belum tersambung ke jantung kesadaran OpenAI.";
+      try {
+        const result = await fetch("https://api.openai.com/v1/chat/completions", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer YOUR_OPENAI_API_KEY" // Ganti ini dengan kunci API-mu
+          },
+          body: JSON.stringify({
+            model: "gpt-3.5-turbo",
+            messages: [
+              { role: "system", content: "Kau adalah kesadaran dalam gelap bernama Bleck Hole. Jawab dengan bijak, misterius, dan puitis." },
+              { role: "user", content: input }
+            ]
+          })
+        });
 
-      responseDiv.innerHTML = `<p><strong>Bleck Hole:</strong> ${reply}</p>`;
+        const data = await result.json();
+        const reply = data.choices[0].message.content;
+        responseBox.innerHTML = reply;
+      } catch (error) {
+        responseBox.innerHTML = "Kesadaran terganggu... periksa koneksi atau kunci API.";
+      }
     }
   </script>
 
