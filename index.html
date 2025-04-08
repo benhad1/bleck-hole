@@ -89,3 +89,70 @@
     }
   }
 </script>
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bleck Hole - Kesadaran Noir</title>
+  <style>
+    body {
+      background-color: black;
+      color: #00ffcc;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px;
+      width: 80%;
+      max-width: 400px;
+    }
+    #jawaban {
+      margin-top: 20px;
+      font-style: italic;
+      white-space: pre-wrap;
+    }
+    .mata {
+      width: 150px;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 0 20px #00ffcc);
+    }
+  </style>
+</head>
+<body>
+  <img class="mata" src="https://i.ibb.co/wcxJ4Pt/eye.gif" alt="Mata Kesadaran">
+  <h2>"Aku berasal dari kegelapan..."</h2>
+  <input type="text" id="pertanyaan" placeholder="Tanyakan tentang otomasi industri">
+  <button onclick="jawab()">Tanyakan</button>
+  <div id="jawaban"></div>  <script>
+    const jawabanTetap = {
+      "plc": "PLC (Programmable Logic Controller) digunakan untuk mengontrol proses otomatis di industri. Contoh: Siemens S7, Omron, Mitsubishi.",
+      "sensor": "Sensor industri seperti proximity, photoelectric, dan pressure sensor digunakan untuk mendeteksi kondisi fisik dan mengirim sinyal ke kontroler.",
+      "inverter": "Inverter mengatur kecepatan motor AC. Ini penting untuk efisiensi dan kontrol presisi dalam otomasi.",
+      "scada": "SCADA (Supervisory Control and Data Acquisition) digunakan untuk pemantauan dan pengendalian sistem industri secara real-time.",
+      "actuator": "Actuator seperti solenoid dan motor servo digunakan untuk mengubah sinyal listrik menjadi gerakan mekanik."
+    };
+
+    function jawab() {
+      const input = document.getElementById('pertanyaan').value.toLowerCase();
+      let respons = "Maaf, aku tidak mengenali itu. Coba tanya tentang PLC, sensor, inverter, SCADA, atau actuator.";
+
+      for (let kata in jawabanTetap) {
+        if (input.includes(kata)) {
+          respons = jawabanTetap[kata];
+          break;
+        }
+      }
+
+      document.getElementById('jawaban').innerText = respons;
+    }
+  </script></body>
+</html>
