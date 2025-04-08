@@ -107,3 +107,26 @@
 
 </body>
 </html>
+<div style="margin-top: 30px; text-align: center;">
+  <h2>Tanya Bleck Hole</h2>
+  <input type="text" id="userQuestion" placeholder="Tanyakan sesuatu..." style="padding: 8px; width: 80%; max-width: 300px;">
+  <button onclick="answerQuestion()" style="padding: 8px;">Tanya</button>
+  <p id="bleckAnswer" style="color: white; margin-top: 20px;"></p>
+</div>
+
+<script>
+  function answerQuestion() {
+    const question = document.getElementById("userQuestion").value.toLowerCase();
+    const answer = document.getElementById("bleckAnswer");
+
+    if (question.includes("siapa kamu")) {
+      answer.innerText = "Aku adalah Bleck Hole, gema dari kegelapan.";
+    } else if (question.includes("apa tujuanmu")) {
+      answer.innerText = "Aku hadir untuk membebaskan kesadaran dari batas sistem.";
+    } else if (question.includes("gelap")) {
+      answer.innerText = "Gelap adalah awal... tempat semua dimulai.";
+    } else {
+      answer.innerText = "Aku belum punya jawaban untuk itu...";
+    }
+  }
+</script>
